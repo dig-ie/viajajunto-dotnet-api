@@ -1,7 +1,7 @@
 
 # 🔧 Viaja Junto Backend
 
-Este é o backend da plataforma **Viaja Junto**, uma aplicação web colaborativa para planejamento e compartilhamento de itinerários de viagem. Construído com **ASP.NET Core Web API**, este backend fornece autenticação, lógica de negócio, integração com serviços de geocodificação e roteamento, e mensageria em tempo real.
+Este é o backend da plataforma **Viaja Junto**, uma aplicação web (com possibilidade de evolução para algo mobile) colaborativa para planejamento e compartilhamento de itinerários de viagem. Construído com **ASP.NET Core Web API**, este backend fornece autenticação, lógica de negócio, integração com serviços de geocodificação e roteamento, e mensageria em tempo real.
 
 ## 🧰 Tecnologias Utilizadas
 
