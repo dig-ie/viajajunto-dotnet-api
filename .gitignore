@@ -1,0 +1,24 @@
+# ASP.NET
+# Ignore the following folders:
+bin/
+obj/
+
+# Ignore user-specific files:
+.vs/
+.vscode/
+
+# User-specific build files
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows Installer files
+Thumbs.db
+
+# macOS
+.DS_Store
+
+# Linux
+*~
