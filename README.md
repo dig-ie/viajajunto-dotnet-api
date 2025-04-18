@@ -8,7 +8,7 @@ Este é o backend da plataforma **Viaja Junto**, uma aplicação web (com possib
 - **ASP.NET Core Web API** – Backend robusto e performático
 - **Entity Framework Core** – ORM para acesso a dados
 - **RabbitMQ** – Mensageria para notificações em tempo real
-- **PostgreSQL** – Banco de dados relacional
+- **MySQL** – Banco de dados relacional
 - **Swagger** – Documentação interativa da API
 - **AutoMapper** – Mapeamento de objetos DTOs e Models
 
