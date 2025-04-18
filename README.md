@@ -12,6 +12,9 @@ Este é o backend da plataforma **Viaja Junto**, uma aplicação web (com possib
 - **Swagger** – Documentação interativa da API
 - **AutoMapper** – Mapeamento de objetos DTOs e Models
 
+## Viajajunto Modelagem Banco de Dados:
+https://github.com/dig-ie/viajajunto_banco_de_dados
+
 ## 📦 Funcionalidades
 
 - 🔐 **Autenticação e Autorização**
