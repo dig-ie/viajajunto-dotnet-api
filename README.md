@@ -27,6 +27,9 @@ Este é o backend da plataforma **Viaja Junto**, uma aplicação web (com possib
 - **OpenRouteService** – Cálculo de rotas
 - **Mapbox / TomTom / MapQuest** – Renderização de mapas e rotas
 
+## Arquitetura em camadas:
+![image](https://github.com/user-attachments/assets/1790d126-08c1-46f1-95ee-bb7f96c64153)
+
 ## 🛠 Como rodar localmente
 
 ```bash
