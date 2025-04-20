@@ -9,6 +9,8 @@ namespace Viajajunto.Models
         public string ImageUrl { get; private set; }
         public DateTime UploadedAt { get; private set; }
 
+        public Post? Post { get; private set; }
+
         public PostImage(int postId, string imageUrl)
         {
             PostId = postId;

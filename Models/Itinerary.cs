@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 
 namespace Viajajunto.Models
@@ -8,21 +7,21 @@ namespace Viajajunto.Models
         public int Id { get; private set; }
         public int UserId { get; private set; }
         public string Title { get; private set; }
-        public string Description { get; private set; }
-        public bool IsPublic { get; private set; }
-        public DateTime CreatedAt { get; private set; }
 
-        private List<MarkPoint> _markPoints;
+        public User? User { get; private set; }
+
+        private readonly List<MarkPoint> _markPoints = new();
         public IReadOnlyCollection<MarkPoint> MarkPoints => _markPoints.AsReadOnly();
 
-        public Itinerary(int userId, string title, string description, bool isPublic)
+        // Construtor
+        public Itinerary(int userId, string title)
         {
             UserId = userId;
             Title = title;
-            Description = description;
-            IsPublic = isPublic;
-            CreatedAt = DateTime.UtcNow;
-            _markPoints = new List<MarkPoint>();
         }
+
+        // Método para adicionar MarkPoint
+        public void AddMarkPoint(MarkPoint markPoint) => _markPoints.Add(markPoint);
+
     }
 }
