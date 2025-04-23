@@ -20,11 +20,11 @@ public class UserServiceTests
     [Fact]
     public async Task AddUser_ShouldAddUserToDatabase()
     {
-        var user = new User { Id = 1, Name = "John Doe", Email = "johndoe@example.com" };
+        var user = new User { Name = "John Doe", Username = "johndoe", Email = "johndoe@example.com" };
 
         await _userService.AddUser(user);
 
-        var addedUser = await _context.Users.FirstOrDefaultAsync(u => u.Id == 1);
+        var addedUser = await _context.Users.FirstOrDefaultAsync(u => u.Username == "johndoe");
 
         Assert.NotNull(addedUser);
         Assert.Equal("John Doe", addedUser.Name);
