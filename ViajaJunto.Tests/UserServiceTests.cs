@@ -20,7 +20,7 @@ public class UserServiceTests
     [Fact]
     public async Task AddUser_ShouldAddUserToDatabase()
     {
-        var user = new User { Name = "John Doe", Username = "johndoe", Email = "johndoe@example.com" };
+        var user = new User { Name = "John Doe", Username = "johndoe", Email = "johndoe@example.com", Password = "123123" };
 
         await _userService.AddUser(user);
 
