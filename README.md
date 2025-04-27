@@ -30,6 +30,18 @@ https://github.com/dig-ie/viajajunto_banco_de_dados
 - **OpenRouteService** – Cálculo de rotas
 - **Mapbox / TomTom / MapQuest** – Renderização de mapas e rotas
 
+## 📦 Commit Semântico (Padrão de mensagens)
+
+| Tipo       | Uso                                                       |
+|------------|-----------------------------------------------------------|
+| `feat`     | Nova funcionalidade                                       |
+| `fix`      | Correção de bug                                           |
+| `refactor` | Refatoração de código (sem mudança de comportamento)      |
+| `style`    | Ajustes visuais ou de formatação (sem lógica envolvida)   |
+| `docs`     | Documentação adicionada ou atualizada                     |
+| `test`     | Adição ou modificação de testes                           |
+| `chore`    | Tarefas auxiliares (configs, dependências, etc.)          |
+
 ## Arquitetura em camadas:
 ![image](https://github.com/user-attachments/assets/1790d126-08c1-46f1-95ee-bb7f96c64153)
 
