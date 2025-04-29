@@ -1,4 +1,4 @@
-using Viajajunto.Models;
+
 namespace Viajajunto.Models {
     public class User
     {
