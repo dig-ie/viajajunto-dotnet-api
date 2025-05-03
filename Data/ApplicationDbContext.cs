@@ -12,7 +12,7 @@ namespace Viajajunto.Data
         public DbSet<Itinerary> Itineraries { get; set; }
         public DbSet<MarkPoint> MarkPoints { get; set; }
         public DbSet<Post> Posts { get; set; }
-        //public DbSet<PostImage> PostImages { get; set; }
+        public DbSet<PostImage> PostImages { get; set; }
         //public DbSet<PostLike> PostLikes { get; set; }
         //public DbSet<PostComment> PostComments { get; set; }
         //public DbSet<PostShare> PostShares { get; set; }
@@ -26,7 +26,7 @@ namespace Viajajunto.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // Relacionamentos padrão
+            // Relacionamentos padrï¿½o
             modelBuilder.Entity<Itinerary>()
                 .HasOne(i => i.User)
                 .WithMany(u => u.Itineraries)
@@ -136,7 +136,7 @@ namespace Viajajunto.Data
             //    .HasForeignKey(m => m.ReceiverId)
             //    .OnDelete(DeleteBehavior.Cascade);
 
-            // Configurações de acesso para coleções privadas (caso use campos em vez de propriedades públicas)
+            // Configuraï¿½ï¿½es de acesso para coleï¿½ï¿½es privadas (caso use campos em vez de propriedades pï¿½blicas)
             //modelBuilder.Entity<Post>().Navigation(p => p.PostImages).UsePropertyAccessMode(PropertyAccessMode.Field);
             //modelBuilder.Entity<Post>().Navigation(p => p.PostLikes).UsePropertyAccessMode(PropertyAccessMode.Field);
             //modelBuilder.Entity<Post>().Navigation(p => p.PostComments).UsePropertyAccessMode(PropertyAccessMode.Field);
