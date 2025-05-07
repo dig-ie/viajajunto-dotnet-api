@@ -23,25 +23,15 @@ namespace Viajajunto.Services
             _context.PostImages.Add(postImage);
             _context.SaveChanges();
 
-            return new PostImageResponseDTO
-            {
-                Id = postImage.Id,
-                ImageUrl = postImage.ImageUrl,
-                UploadedAt = postImage.UploadedAt
-            };
+            return new PostImageResponseDTO(postImage.Id, postImage.PostId, postImage.ImageUrl, postImage.UploadedAt);
+
         }
 
         public List<PostImageResponseDTO> GetImagesByPostId(int postId)
         {
             return _context.PostImages
                 .Where(img => img.PostId == postId)
-                .Select(img => new PostImageResponseDTO
-                {
-                    Id = img.Id,
-                    PostId = img.PostId,
-                    ImageUrl = img.ImageUrl,
-                    UploadedAt = img.UploadedAt
-                })
+                .Select(img => new PostImageResponseDTO(img.Id, img.PostId, img.ImageUrl, img.UploadedAt))
                 .ToList();
         }
     }
