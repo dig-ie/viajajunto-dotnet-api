@@ -14,7 +14,7 @@ namespace Viajajunto.Tests.Services
         private ApplicationDbContext GetInMemoryDbContext()
         {
             var options = new DbContextOptionsBuilder<ApplicationDbContext>()
-                .UseInMemoryDatabase(Guid.NewGuid().ToString()) // Para gerar um banco pra cada teste
+                .UseInMemoryDatabase(Guid.NewGuid().ToString())
                 .Options;
 
             return new ApplicationDbContext(options);
@@ -23,25 +23,17 @@ namespace Viajajunto.Tests.Services
         [Fact]
         public void CreatePostImage_ShouldAddImageToDatabase()
         {
-            // Arrange
             var context = GetInMemoryDbContext();
 
-            // Adicona um post base para a imagem
             var post = new Post(1, 1, "Post de teste");
             context.Posts.Add(post);
             context.SaveChanges();
 
             var service = new PostImageService(context);
-            var dto = new CreatePostImageDTO
-            {
-                PostId = post.Id,
-                ImageUrl = "https://exemplo.com/imagem.jpg"
-            };
+            var dto = new CreatePostImageDTO(post.Id, "https://exemplo.com/imagem.jpg");
 
-            // Act
             var result = service.CreatePostImage(dto);
 
-            // Assert
             var imageInDb = context.PostImages.FirstOrDefault();
             Assert.NotNull(imageInDb);
             Assert.Equal(dto.ImageUrl, imageInDb.ImageUrl);
@@ -52,7 +44,6 @@ namespace Viajajunto.Tests.Services
         [Fact]
         public void GetImagesByPostId_ShouldReturnCorrectImages()
         {
-            // Arrange
             var context = GetInMemoryDbContext();
             var post = new Post(1, 1, "Post com imagens");
             context.Posts.Add(post);
@@ -67,10 +58,8 @@ namespace Viajajunto.Tests.Services
 
             var service = new PostImageService(context);
 
-            // Act
             var images = service.GetImagesByPostId(post.Id);
 
-            // Assert
             Assert.Equal(2, images.Count);
             Assert.All(images, img => Assert.Equal(post.Id, img.PostId));
         }
