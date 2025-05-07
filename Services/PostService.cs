@@ -23,23 +23,13 @@ namespace Viajajunto.Services
             _context.Posts.Add(post);
             _context.SaveChanges();
 
-            return new PostResponseDTO
-            {
-                Id = post.Id,
-                Content = post.Content,
-                CreatedAt = post.CreatedAt
-            };
+            return new PostResponseDTO(post.Id, post.Content, post.CreatedAt);
         }
 
         public List<PostResponseDTO> GetAllPosts()
         {
             return _context.Posts
-                .Select(p => new PostResponseDTO
-                {
-                    Id = p.Id,
-                    Content = p.Content,
-                    CreatedAt = p.CreatedAt
-                })
+                .Select(p => new PostResponseDTO(p.Id, p.Content, p.CreatedAt))
                 .ToList();
         }
     }
