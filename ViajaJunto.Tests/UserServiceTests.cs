@@ -10,7 +10,7 @@ public class UserServiceTests
     public UserServiceTests()
     {
         var options = new DbContextOptionsBuilder<ApplicationDbContext>()
-            .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString()) // banco isolado por teste
+            .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
             .Options;
 
         _context = new ApplicationDbContext(options);
